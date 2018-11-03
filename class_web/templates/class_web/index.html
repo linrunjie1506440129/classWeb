@@ -1,0 +1,51 @@
+{% extends "class_web/main.html" %}
+{% block body %}
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">欢迎来到信管</h1>
+    <p>信息管理与信息系统 [1]  （Information Management and Information System，简称IMIS）是集信息技术与管理科学于一体、实践性和创新性很强的交叉学科。本专业旨在培养具备现代管理学理论基础、计算机科学技术知识及应用能力，掌握系统思想和信息系统分析与设计方法以及信息管理等方面的知识与能力，从事信息管理以及信息系统分析、设计、实施、管理和评价的复合型人才。其简称信息管理学或管理信息学，属于管理科学与工程范畴。</p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">了解跟多 »</a></p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h2>班级新闻</h2>
+      {% for clan in clane %}
+      <li>
+      <a href="{% url 'class_web:new' clan.id %}">{{ clan.ntitle }}</a>
+      </li>
+      {% empty %}
+      <li>没有文章</li>
+      {% endfor %}
+      <p><a class="btn btn-outline-info btn-sm" href="{% url 'class_web:news' %}" role="button">更多 »</a></p>
+    </div>
+    <div class="col-md-4">
+      <h2>班级公告</h2>
+      {% for clas in clano %}
+      <li>
+      <a href="{% url 'class_web:note' clas.id %}">{{ clas.otitle }}</a>
+      </li>
+      {% empty %}
+      <li>没有文章</li>
+      {% endfor %}
+      <p><a class="btn btn-outline-info btn-sm" href="{% url 'class_web:notes' %}" role="button">更多 »</a></p>
+    </div>
+    <div class="col-md-4">
+      <h2>班级活动</h2>
+      {% for clans in clasc %}
+      <li>
+      <a href="{% url 'class_web:active' clans.id %}">{{ clans.atitle }}</a>
+      </li>
+      {% empty %}
+      <li>没有文章</li>
+      {% endfor %}
+      <p><a class="btn btn-outline-info btn-sm" href="{% url 'class_web:actives' %}" role="button">更多 »</a></p>
+    </div>
+  </div>
+  <hr>
+</div>
+<footer class="container">
+    <p>© Company 2017-2018</p>
+  </footer>
+{% endblock %}

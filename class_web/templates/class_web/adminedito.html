@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>信管</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>文章发布</h2>
+  <br>
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#home">班级公告</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu1">班级新闻</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu2">班级活动</a>
+    </li>
+
+  </ul>
+
+
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active"><br>
+      <form action="{% url 'class_web:adminindex' %}" method="post">
+        {% csrf_token %}
+         <div class="form-group">
+        <label>标题</label>
+        <input type="text" class="form-control"  placeholder="" name="otitle" size="30" style="width: 300px;" required="你叫啥？" />
+      </div>
+      <div class="form-group">
+        <label>正文</label>
+        <textarea class="form-control" rows="10" name="otext" size="30" style="width: 100%;" required="你想表达啥？"></textarea>
+            <button type="submit" class="btn btn-info" style="margin-left: 982px;
+            margin-top: 20px;
+            padding-left: 30px;
+            padding-right: 30px;">发布</button>
+      </div >
+    </form>
+    </div>
+    <div id="menu1" class="container tab-pane fade"><br>
+      <form action="{% url 'class_web:adminindex' %}" method="post">
+        {% csrf_token %}
+         <div class="form-group">
+        <label>标题</label>
+        <input type="text" class="form-control"  placeholder="" name="ntitle" size="30" style="width: 300px;" required="你叫啥？" />
+      </div>
+      <div class="form-group">
+        <label>正文</label>
+        <textarea class="form-control" rows="10" name="ntext" size="30" style="width: 100%;" required="你想表达啥？"></textarea>
+            <button type="submit" class="btn btn-info" style="margin-left: 982px;
+            margin-top: 20px;
+            padding-left: 30px;
+            padding-right: 30px;">发布</button>
+      </div >
+    </form>
+    </div>
+    <div id="menu2" class="container tab-pane fade"><br>
+      <form action="{% url 'class_web:adminindex' %}" method="post">
+        {% csrf_token %}
+         <div class="form-group">
+        <label>标题</label>
+        <input type="text" class="form-control"  placeholder="" name="atitle" size="30" style="width: 300px;" required="你叫啥？" />
+      </div>
+      <div class="form-group">
+        <label>正文</label>
+        <textarea class="form-control" rows="10" name="atext" size="30" style="width: 100%;" required="你想表达啥？"></textarea>
+            <button type="submit" class="btn btn-info" style="margin-left: 982px;
+            margin-top: 20px;
+            padding-left: 30px;
+            padding-right: 30px;">发布</button>
+      </div >
+    </form>
+    </div>
+    <p><a type="button" class="btn btn-danger btn-lg btn-block" href="{% url 'class_web:acc_logout' %}" role='button'>退出登陆</a></p>
+  </div>
+</div>
+
+</body>
+</html>

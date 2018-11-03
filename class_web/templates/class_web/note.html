@@ -1,0 +1,12 @@
+{% extends "class_web/main.html" %}
+{% block body %}
+<div class="container">
+<h1 class="pd-3 mb-4 border-bottom">{{note.otitle}}</h1>
+<div class="date">
+    {{note.date_added}}
+</div>
+<div class="panel-body">
+    {{note.otext}}
+</div>
+</div>
+{% endblock %}

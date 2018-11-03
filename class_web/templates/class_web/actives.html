@@ -1,0 +1,29 @@
+{% extends "class_web/main.html" %}
+{% block body %}
+<div class="container" style="padding-top: 20px;">
+    <div class="row">
+        <div class="col-md-8">
+        <h1 class="pd-3 mb-4 border-bottom">班级活动</h1>
+        {% for clas in clasc %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4><a href="{% url 'class_web:active' clas.id %}">{{clas.atitle}}</a></h4>
+            </div>
+        </div>
+        {% empty %}
+        没有文章
+        {% endfor %}
+        </div>
+        <aside class="col-md-4">
+            <div class="p-3">
+                <h4>联系我们</h4>
+                    <ol class="list-unstyled mb-0">
+                    <li><p>地址：武汉生物工程学院</p></li>
+                    <li><p>电话：110</p></a></li>
+                    <li><p>QQ：100010010</p></a></li>
+                    </ol>
+            </div>
+        </aside>
+    </div>
+</div>
+{% endblock %}
