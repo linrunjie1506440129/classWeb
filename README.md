@@ -11,5 +11,6 @@
 ` python manage.py migrate `  
 ` python manage.py createsuperuser `    
 ` python manage.py runserver `  
+**后台地址为 localhost/login**
 ## 致谢
 ？？不谢
