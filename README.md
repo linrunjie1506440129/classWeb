@@ -12,5 +12,5 @@
 ` python manage.py createsuperuser `    
 ` python manage.py runserver `  
 **后台地址为 localhost/login**
-## 致谢
-？？不谢
+## 致谢  
+感谢老师指导我们的项目规划
